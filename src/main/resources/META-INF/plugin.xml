@@ -1,0 +1,33 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.techsen.ObjectConverter</id>
+
+    <name>ObjectConverter</name>
+
+    <vendor email="intechsen@163.com" url="https://github.com/intechsen">techsen</vendor>
+
+    <description><![CDATA[
+    Object Converter,quick generate converter codes<br>
+    <em>ObjectConverter</em>
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+
+
+
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <action id="com.techsen.objectconverter.action.ShowObjectAction" class="com.techsen.objectconverter.action.ShowObjectAction"
+                text="Object Converter">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="com.techsen.objectconverter.action.GenerateObjectAction" class="com.techsen.objectconverter.action.GenerateObjectAction"
+                text="Object Converter">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

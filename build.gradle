@@ -1,0 +1,33 @@
+plugins {
+    id("java")
+    id("org.jetbrains.intellij") version "1.10.0"
+}
+
+group = "com.techsen"
+version = "1.0"
+
+sourceCompatibility = 11
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/central/'}
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    maven { url 'https://maven.aliyun.com/repository/google/' }
+    maven { url 'https://maven.aliyun.com/repository/jcenter/'}
+    maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
+}
+
+intellij {
+    version = '2020.3'
+    plugins=['java']
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-Xlint:unchecked', '-Xlint:deprecation', '-parameters']
+}
+
+
+patchPluginXml {
+    sinceBuild = '203'
+    untilBuild = '221.*'
+}
